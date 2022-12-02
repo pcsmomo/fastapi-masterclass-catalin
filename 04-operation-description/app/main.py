@@ -19,7 +19,8 @@ def index():
     '/blog/all',
     tags=['blog'],
     summary='Retrieve all blogs',
-    description='This api calls simulates fetching all blogs'
+    description='This api calls simulates fetching all blogs',
+    response_description='The list of available blogs'
 )
 def get_all_blogs(page: int = 1, page_size: Optional[int] = None):
     return {'message': f'All {page_size} blogs on page {page}'}
