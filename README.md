@@ -52,4 +52,8 @@ Complete FastAPI masterclass from scratch 2022 by Catalin Stefan
 - Number validators
 - Complex subtypes
 
+### 27. Validators
+
+required: `Body(...)` or `Body(Ellipsis)`
+
 </details>
