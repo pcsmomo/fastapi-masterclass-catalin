@@ -68,6 +68,10 @@ required: `Body(...)` or `Body(Ellipsis)`
 - Update and delete
 - Relationships
 
-### 32. Quick intro about Dependencies
+### 35. Create database and table
+
+```sh
+poetry add sqlalchemy
+```
 
 </details>
