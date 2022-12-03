@@ -56,4 +56,18 @@ Complete FastAPI masterclass from scratch 2022 by Catalin Stefan
 
 required: `Body(...)` or `Body(Ellipsis)`
 
+## Section 7: Database with SQLAlchemy
+
+### 31. Section overview
+
+- Dependencies quick intro
+- Databases in FastAPI
+- Create database and tables
+- Write data
+- Create and read
+- Update and delete
+- Relationships
+
+### 32. Quick intro about Dependencies
+
 </details>
