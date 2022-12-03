@@ -74,4 +74,8 @@ required: `Body(...)` or `Body(Ellipsis)`
 poetry add sqlalchemy
 ```
 
+### 37. Create database and table continued
+
+[TablePlus - database tool](https://tableplus.com/)
+
 </details>
