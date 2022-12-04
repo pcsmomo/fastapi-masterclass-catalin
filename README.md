@@ -78,4 +78,11 @@ poetry add sqlalchemy
 
 [TablePlus - database tool](https://tableplus.com/)
 
+### 38. Write data in database
+
+```sh
+poetry add passlib
+poetry add bcrypt
+```
+
 </details>
