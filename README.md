@@ -85,4 +85,15 @@ poetry add passlib
 poetry add bcrypt
 ```
 
+```py
+# app/schemas.py
+# it automates the process from orm to our schema
+class Config():
+    orm_mode = True
+
+# app/router/user.py
+# response model doesn't have id, password, so they will be hidden
+@router.post('/', response_model=UserDisplay)
+```
+
 </details>
