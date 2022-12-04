@@ -96,4 +96,15 @@ class Config():
 @router.post('/', response_model=UserDisplay)
 ```
 
+## Section 8: Concepts
+
+### 43. Section overview
+
+- Error handling
+- Custom responses
+- Headers
+- Cookies
+- Form data
+- CORS
+
 </details>

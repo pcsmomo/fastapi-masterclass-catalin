@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "fastapi-catalin"
+version = "0.1.0"
+description = ""
+authors = ["Noah Kim"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+uvicorn = "^0.20.0"
+fastapi = "^0.88.0"
+sqlalchemy = "^1.4.44"
+passlib = "^1.7.4"
+bcrypt = "^4.0.1"
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
