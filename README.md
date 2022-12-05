@@ -107,4 +107,24 @@ class Config():
 - Form data
 - CORS
 
+### 45. Custom Response
+
+- Standard response is a model, list, database model, dict, etc.
+- We can customize the Response object
+- No data conversion
+
+#### Why?
+
+- add parameters: Headers, Cookies
+- different types of response
+  - plain text
+  - xml
+  - html
+  - files
+  - streaming
+- complex decisional logic
+- better docs
+
+[htmlg - online WYSIWYG html editor](https://htmlg.com/html-editor/)
+
 </details>
