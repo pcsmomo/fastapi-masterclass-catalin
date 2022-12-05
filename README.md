@@ -127,4 +127,10 @@ class Config():
 
 [htmlg - online WYSIWYG html editor](https://htmlg.com/html-editor/)
 
+### 46. Headers
+
+- HTTP Headers don't allow `_` (underscore)
+  - automatic conversion between `_` and `-`
+    - `custom_header` -> `custom-header`
+
 </details>
