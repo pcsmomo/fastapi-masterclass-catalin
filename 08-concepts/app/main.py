@@ -1,7 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+# from fastapi import HTTPException
+# from fastapi.responses import PlainTextResponse
 from app.router import blog_get, blog_post, user, article
 from app.db import models
 from app.db.database import engine
+from app.exceptions import StoryException
 
 app = FastAPI()
 app.include_router(user.router)
@@ -13,6 +17,19 @@ app.include_router(blog_post.router)
 @app.get('/hello')
 def index():
     return {'message': 'Hello world!'}
+
+
+@app.exception_handler(StoryException)
+def story_exception_handler(request: Request, exc: StoryException):
+    return JSONResponse(
+        status_code=418,
+        content={'detail': exc.name}
+    )
+
+# It will intercept all exceptinos
+# @app.exception_handler(HTTPException)
+# def custom_handler(request: Request, exc: StoryException):
+#     return PlainTextResponse(str(exc), status_code=400)
 
 
 models.Base.metadata.create_all(engine)
