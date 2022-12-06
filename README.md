@@ -158,4 +158,20 @@ CORS: Cross Origin Resource Sharing
 - Complex topic
 - OAuth2 with username and password
 
+### 54. Generating access token
+
+```sh
+# jwt
+poetry add jose
+
+# generate secret key on terminal
+openssl rand -hex 32
+# a4fbc3a090deb4ee6da272a666faed145568b95b06fe485a4c007e5641083a55
+```
+
+```py
+# it must be the same as token url in `auth2.py`, OAuth2PasswordBearer(tokenUrl="token")
+@router.post('/token')
+```
+
 </details>
