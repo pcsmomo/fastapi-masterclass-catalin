@@ -140,4 +140,8 @@ class Config():
 poetry add python-multipart
 ```
 
+### 49. CORS
+
+CORS: Cross Origin Resource Sharing
+
 </details>
