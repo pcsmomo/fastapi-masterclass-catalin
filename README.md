@@ -144,4 +144,13 @@ poetry add python-multipart
 
 CORS: Cross Origin Resource Sharing
 
+## Section 9: Authentication
+
+### 50. Section overview
+
+- Authentication
+- Securing an endpoint
+- Generating access token
+- User authentication
+
 </details>
