@@ -153,4 +153,9 @@ CORS: Cross Origin Resource Sharing
 - Generating access token
 - User authentication
 
+### 51. Authentication
+
+- Complex topic
+- OAuth2 with username and password
+
 </details>
