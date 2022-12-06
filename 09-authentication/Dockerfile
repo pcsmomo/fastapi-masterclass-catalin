@@ -3,6 +3,7 @@ FROM arm64v8/python:3.10-slim-bullseye
 ENV POETRY_VERSION=1.2.2
 
 RUN pip install "poetry==$POETRY_VERSION"
+# RUN apt-get update && apt-get install -y --no-install-recommends gcc build-essential 
 
 WORKDIR /usr/src
 
