@@ -232,6 +232,14 @@ pytest
 > this file, `tests/__init__.py` is necessary for testing. \
 > without the init file, testing will be failed.
 
+### 65. Logging
+
+```sh
+docker exec -it 11-tasks-app-1 bash
+/usr/src# ls
+/usr/src# cat log.txt
+```
+
 ## Section 12: More concepts
 
 ### 66. Section overview
