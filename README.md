@@ -259,4 +259,10 @@ poetry add aiofiles
 
 Check the response on the [Real time HTML Editor](`https://htmledit.squarefree.com/`)
 
+### 72. Web sockets
+
+```sh
+poetry add websockets
+```
+
 </details>
