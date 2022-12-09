@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 # from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+import time
 from app.router import blog_get, blog_post, user, article, product, file
 from app.templates import templates
 from app.auth import authentication
@@ -41,6 +42,15 @@ def story_exception_handler(request: Request, exc: StoryException):
 
 
 models.Base.metadata.create_all(engine)
+
+
+@app.middleware("http")
+async def add_middleware(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    duration = time.time() - start_time
+    response.headers['duration'] = str(duration)
+    return response
 
 
 origins = [
