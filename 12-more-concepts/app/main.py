@@ -55,4 +55,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount('/files', StaticFiles(directory="app/files"), name='files')
+app.mount('/files', StaticFiles(directory="app/files"), name="files")
+app.mount('/templates/static',
+          StaticFiles(directory="app/templates/static"), name="static")
