@@ -232,4 +232,14 @@ pytest
 > this file, `tests/__init__.py` is necessary for testing. \
 > without the init file, testing will be failed.
 
+## Section 12: More concepts
+
+### 66. Section overview
+
+- Async await
+- Templates
+- Middleware
+- Background tasks
+- WebSockets
+
 </details>
