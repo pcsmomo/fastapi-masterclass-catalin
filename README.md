@@ -242,4 +242,10 @@ pytest
 - Background tasks
 - WebSockets
 
+### 68. Templates
+
+```sh
+poetry add jinja2
+```
+
 </details>
