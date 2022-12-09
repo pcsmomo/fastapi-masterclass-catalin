@@ -210,4 +210,10 @@ deta new
 
 [FastAPI doc: Debugging](https://fastapi.tiangolo.com/tutorial/debugging/)
 
+### 64. Testing
+
+```sh
+poetry add --dev pytest httpx
+```
+
 </details>
