@@ -182,4 +182,17 @@ openssl rand -hex 32
 poetry add aiofiles
 ```
 
+## Section 11: Tasks
+
+### 62. Deployment
+
+- [Deta - free python hosting](https://www.deta.sh/)
+- [Deta doc - Getting started](https://docs.deta.sh/docs/micros/getting_started)
+
+```sh
+curl -fsSL https://get.deta.dev/cli.sh | sh
+deta login
+deta new
+```
+
 </details>
