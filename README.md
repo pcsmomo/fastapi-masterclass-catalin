@@ -216,4 +216,20 @@ deta new
 poetry add --dev pytest httpx
 ```
 
+```sh
+pytest
+# =============================== test session starts ================================
+# platform darwin -- Python 3.10.8, pytest-7.2.0, pluggy-1.0.0
+# rootdir: /Users/noah/Documents/study/study_codes/udemy/fastapi-masterclass-catalin/fastapi-masterclass-catalin-git/11-tasks
+# plugins: anyio-3.6.2
+# collected 4 items
+
+# tests/test_main.py ....                                                       [100%]
+
+# ================================ 4 passed in 0.72s =================================
+```
+
+> this file, `tests/__init__.py` is necessary for testing. \
+> without the init file, testing will be failed.
+
 </details>
