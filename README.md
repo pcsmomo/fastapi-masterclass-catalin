@@ -195,4 +195,19 @@ deta login
 deta new
 ```
 
+### 63. Debugging
+
+1. Open the folder, `11-tasks`
+2. Before debug, set the breakpoint
+3. View -> Command Palette (Shift + Command + P)
+   - Debug: Restart
+     - FastAPI
+     - `app.main.py`
+   - (or) Debug: Add Configuration
+     - FastAPI
+     - `app.main.py`
+4. the app will run on the vscode terminal and it be able to debug!!!
+
+[FastAPI doc: Debugging](https://fastapi.tiangolo.com/tutorial/debugging/)
+
 </details>
