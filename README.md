@@ -174,4 +174,12 @@ openssl rand -hex 32
 @router.post('/token')
 ```
 
+## Section 10: Working with files
+
+### 59. Making files statically available
+
+```sh
+poetry add aiofiles
+```
+
 </details>

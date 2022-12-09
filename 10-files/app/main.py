@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 # from fastapi import HTTPException
 # from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from app.router import blog_get, blog_post, user, article, product, file
 from app.auth import authentication
 from app.db import models
@@ -51,3 +52,5 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.mount('/files', StaticFiles(directory="app/files"), name='files')
