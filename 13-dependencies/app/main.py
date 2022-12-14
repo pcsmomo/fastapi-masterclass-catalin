@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 import time
 from app.client import html
-from app.router import blog_get, blog_post, user, article, product, file
+from app.router import blog_get, blog_post, user, article, product, file, dependencies
 from app.templates import templates
 from app.auth import authentication
 from app.db import models
@@ -15,6 +15,7 @@ from app.db.database import engine
 from app.exceptions import StoryException
 
 app = FastAPI()
+app.include_router(dependencies.router)
 app.include_router(templates.router)
 app.include_router(file.router)
 app.include_router(authentication.router)
