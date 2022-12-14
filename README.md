@@ -265,4 +265,13 @@ Check the response on the [Real time HTML Editor](`https://htmledit.squarefree.c
 poetry add websockets
 ```
 
+## Section 13: Dependencies
+
+### 73. Section overview
+
+- Dependencies
+- Class dependencies
+- Multi level dependencies
+- Global dependencies
+
 </details>
