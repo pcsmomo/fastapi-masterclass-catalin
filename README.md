@@ -274,4 +274,17 @@ poetry add websockets
 - Multi level dependencies
 - Global dependencies
 
+## Section 14: OCR application
+
+### 78. Intro
+
+OCR: Optical Character Recognition
+
+- Very simple
+- Why?
+  - confidence
+  - bragging rights
+  - Frontend - API - Backend
+- `Tesseract` and `pytesseract`
+
 </details>

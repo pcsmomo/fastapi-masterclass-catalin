@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    app:
+        build: '.'
+        networks:
+            - fastapi-catalin-network
+        ports:
+            - 8000:8000
+        volumes:
+            - ./app:/usr/src/app
+            - ./fastapi-practice.db:/usr/src/fastapi-practice.db
+
+networks:
+    fastapi-catalin-network:
+        name: fastapi-catalin-network
