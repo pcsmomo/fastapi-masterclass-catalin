@@ -9,7 +9,6 @@ services:
             - 8000:8000
         volumes:
             - ./app:/usr/src/app
-            - ./fastapi-practice.db:/usr/src/fastapi-practice.db
 
 networks:
     fastapi-catalin-network:

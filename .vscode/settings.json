@@ -4,6 +4,6 @@
     "editor.tabSize": 4,
     "editor.formatOnSave": true
   },
-  "python.defaultInterpreterPath": "/Users/noah/Library/Caches/pypoetry/virtualenvs/fastapi-catalin-11-tasks-hv99l7_a-py3.10/bin/python",
+  "python.defaultInterpreterPath": "/Users/noah/Library/Caches/pypoetry/virtualenvs/fastapi-catalin-14-ocr-sP5W4bpf-py3.10/bin/python",
   "python.analysis.extraPaths": ["app", "another/path/etc"]
 }

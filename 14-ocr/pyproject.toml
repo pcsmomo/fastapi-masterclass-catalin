@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "fastapi-catalin-13-dependencies"
+name = "fastapi-catalin-14-ocr"
 version = "0.1.0"
 description = ""
 authors = ["Noah Kim"]
@@ -7,6 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = "^0.88.0"
+uvicorn = "^0.20.0"
+python-multipart = "^0.0.5"
+aiofiles = "^22.1.0"
+pytesseract = "^0.3.10"
 
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.0.0"

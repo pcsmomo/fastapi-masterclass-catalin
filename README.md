@@ -287,4 +287,22 @@ OCR: Optical Character Recognition
   - Frontend - API - Backend
 - `Tesseract` and `pytesseract`
 
+### 79. OCR API functionality
+
+[Tesseract by Google](https://github.com/tesseract-ocr/tesseract#about)
+
+```sh
+brew install tesseract
+poetry add fastapi uvicorn python-multipart aiofiles pytesseract
+```
+
+Attach any image file with text. The library will read the text. Awesome!!
+
+> but tesseract should be installed on the server\
+> so with the current setting with docker-compose, it won't read the image. \
+> run it on the local, it works!!!! it's amazing
+>
+> - `poetry shell`
+> - `uvicorn app.main:app --host=0.0.0.0 --timeout-keep-alive=0 --port=8000 --reload`
+
 </details>
