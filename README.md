@@ -305,4 +305,16 @@ Attach any image file with text. The library will read the text. Awesome!!
 > - `poetry shell`
 > - `uvicorn app.main:app --host=0.0.0.0 --timeout-keep-alive=0 --port=8000 --reload`
 
+## Section 15: Blog site - FastAPI
+
+### 81. Project setup
+
+```sh
+poetry add fastapi \
+  uvicorn \
+  sqlalchemy \
+  python-multipart \
+  aiofiles
+```
+
 </details>

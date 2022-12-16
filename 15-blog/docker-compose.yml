@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+    app:
+        build: './api'
+        networks:
+            - fastapi-catalin-network
+        ports:
+            - 8000:8000
+        volumes:
+            - ./api/app:/usr/src/app
+
+networks:
+    fastapi-catalin-network:
+        name: fastapi-catalin-network
