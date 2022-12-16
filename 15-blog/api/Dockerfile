@@ -17,6 +17,7 @@ RUN poetry config installer.parallel false
 RUN poetry install --no-interaction --no-ansi
 
 COPY app ./app
+COPY blog_api.db ./
 
 # ENTRYPOINT ["uvicorn", "app.main:app", "--reload"]
 # uvicorn app.main:app --host=0.0.0.0 --timeout-keep-alive=0 --port=8000 --reload

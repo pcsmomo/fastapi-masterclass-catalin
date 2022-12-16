@@ -9,6 +9,7 @@ services:
             - 8000:8000
         volumes:
             - ./api/app:/usr/src/app
+            - ./api/blog_api.db:/usr/src/blog_api.db
 
 networks:
     fastapi-catalin-network:
