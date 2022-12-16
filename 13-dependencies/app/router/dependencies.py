@@ -1,8 +1,10 @@
 from fastapi import APIRouter, Request, Depends
+from app.custom_log import log
 
 router = APIRouter(
     prefix='/dependencies',
-    tags=['dependencies']
+    tags=['dependencies'],
+    dependencies=[Depends(log)]
 )
 
 
