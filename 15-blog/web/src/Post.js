@@ -13,6 +13,11 @@ function Post({ post }) {
   return (
     <div className="post">
       <img className="post_image" src={imageUrl} alt="post" />
+      <div className="post_content">
+        <div className="post_title">{post.title}</div>
+        <div className="post_creator">by {post.creator}</div>
+        <div className="post_text">{post.content}</div>
+      </div>
     </div>
   );
 }
