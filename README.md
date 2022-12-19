@@ -4,7 +4,11 @@ Complete FastAPI masterclass from scratch 2022 by Catalin Stefan
 
 ## Folder structure
 
--
+- 03-get-method to 13-dependencies
+  - keep adding features and concepts
+- 14-ocr: Optical character recognition
+- 15-prg-blog
+- 17-prg-instagram
 
 ## Details
 
@@ -316,5 +320,16 @@ poetry add fastapi \
   python-multipart \
   aiofiles
 ```
+
+## Section 17: Instagram - FastAPI
+
+### 98. FastAPI requirements
+
+- Signup, Login, Logout
+- Upload an image with a caption
+- Retrieve and display all posts
+- Delete a post
+  - only available to its creator
+- Comment on a post
 
 </details>
