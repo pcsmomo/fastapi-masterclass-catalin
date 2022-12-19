@@ -130,4 +130,4 @@ dmypy.json
 
 # database file
 fastapi-practice.db
-blog_api.db
+# blog_api.db
