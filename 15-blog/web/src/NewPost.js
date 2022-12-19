@@ -9,10 +9,79 @@ function NewPost() {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
 
+  const handleImageUpload = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+  const handleCreate = (e) => {
+    e?.preventDefault();
+
+    const formData = new FormData();
+    formData.append('image', image);
+
+    const requestOptions = {
+      method: 'POST',
+      body: formData,
+    };
+
+    fetch(BASE_URL + 'post/image', requestOptions)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        const filename = data.filename.replace('app/', '');
+        createPost(filename);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setImage(null);
+        document.getElementById('fileInput').value = null;
+      });
+  };
+
+  const createPost = (imageUrl) => {
+    const json_string = JSON.stringify({
+      image_url: imageUrl,
+      title: title,
+      content: text,
+      creator: creator,
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      }),
+      body: json_string,
+    };
+
+    fetch(BASE_URL + 'post', requestOptions)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        window.location.reload();
+        window.scrollTo(0, 0);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="newpost_content">
       <div className="newpost_image">
-        <input type="file" id="fileInput" onChange={null} />
+        <input type="file" id="fileInput" onChange={handleImageUpload} />
       </div>
       <div className="newpost_creator">
         <input
@@ -45,7 +114,7 @@ function NewPost() {
         />
       </div>
       <div>
-        <button className="create_button" onClick={null}>
+        <button className="create_button" onClick={handleCreate}>
           Create
         </button>
       </div>
