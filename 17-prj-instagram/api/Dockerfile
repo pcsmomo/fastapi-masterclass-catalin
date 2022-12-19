@@ -20,6 +20,6 @@ COPY app ./app
 # COPY blog_api.db ./
 
 # ENTRYPOINT ["uvicorn", "app.main:app", "--reload"]
-# uvicorn app.main:app --host=0.0.0.0 --timeout-keep-alive=0 --port=8000 --reload
+# uvicorn app.main:app --port=8000 --reload
 ENTRYPOINT ["uvicorn", "app.main:app", "--host=0.0.0.0", "--timeout-keep-alive=0", "--port=8000", "--reload"]
 # CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

@@ -332,4 +332,12 @@ poetry add fastapi \
   - only available to its creator
 - Comment on a post
 
+### 99. Project setup
+
+```sh
+poetry install
+poetry shell
+uvicorn app.main:app --port=8000 --reload
+```
+
 </details>
