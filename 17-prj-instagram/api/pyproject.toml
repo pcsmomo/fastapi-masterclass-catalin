@@ -10,6 +10,8 @@ python = "^3.10"
 fastapi = "^0.88.0"
 uvicorn = "^0.20.0"
 sqlalchemy = "^1.4.45"
+passlib = "^1.7.4"
+bcrypt = "^4.0.1"
 
 
 [tool.poetry.group.dev.dependencies]

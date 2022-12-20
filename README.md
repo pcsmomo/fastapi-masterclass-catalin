@@ -348,4 +348,10 @@ uvicorn app.main:app --port=8000 --reload
 poetry add sqlalchemy
 ```
 
+### 103. Password encryption
+
+```sh
+poetry add passlib bcrypt
+```
+
 </details>
