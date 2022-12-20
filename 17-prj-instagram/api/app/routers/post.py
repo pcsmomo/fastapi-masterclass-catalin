@@ -1,6 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from sqlalchemy.orm.session import Session
 from typing import List
+import string
+import random
+import shutil
 from app.routers.schemas import PostBase, PostDisplay
 from app.db.database import get_db
 from app.db import db_post
@@ -24,3 +27,17 @@ def create(request: PostBase, db: Session = Depends(get_db)):
 @router.get('/all', response_model=List[PostDisplay])
 def posts(db: Session = Depends(get_db)):
     return db_post.get_all(db)
+
+
+@router.post('/image')
+def upload_image(image: UploadFile = File(...)):
+    letters = string.ascii_letters
+    rand_str = ''.join(random.choice(letters) for i in range(6))
+    new = f'_{rand_str}.'
+    filename = new.join(image.filename.rsplit('.', 1))
+    path = f'app/images/{filename}'
+
+    with open(path, "w+b") as buffer:
+        shutil.copyfileobj(image.file, buffer)
+
+    return {'filename': path}

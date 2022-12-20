@@ -354,4 +354,10 @@ poetry add sqlalchemy
 poetry add passlib bcrypt
 ```
 
+### 106. Upload image
+
+```sh
+poetry add python-multipart aiofiles
+```
+
 </details>

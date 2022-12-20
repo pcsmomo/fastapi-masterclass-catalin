@@ -12,6 +12,8 @@ uvicorn = "^0.20.0"
 sqlalchemy = "^1.4.45"
 passlib = "^1.7.4"
 bcrypt = "^4.0.1"
+python-multipart = "^0.0.5"
+aiofiles = "^22.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
