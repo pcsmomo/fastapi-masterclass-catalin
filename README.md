@@ -340,4 +340,12 @@ poetry shell
 uvicorn app.main:app --port=8000 --reload
 ```
 
+## Section 17: Instagram - FastAPI
+
+### 101. Database setup
+
+```sh
+poetry add sqlalchemy
+```
+
 </details>

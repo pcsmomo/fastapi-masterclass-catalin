@@ -131,3 +131,4 @@ dmypy.json
 # database file
 fastapi-practice.db
 # blog_api.db
+ig_api.db
