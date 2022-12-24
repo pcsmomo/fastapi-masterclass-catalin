@@ -166,7 +166,7 @@ CORS: Cross Origin Resource Sharing
 
 ```sh
 # jwt
-poetry add jose
+poetry add python-jose
 
 # generate secret key on terminal
 openssl rand -hex 32
@@ -358,6 +358,17 @@ poetry add passlib bcrypt
 
 ```sh
 poetry add python-multipart aiofiles
+```
+
+### 108. Authentication
+
+```sh
+# jwt
+poetry add python-jose
+
+# generate secret key on terminal
+openssl rand -hex 32
+# e49b4b8d9831aefe01760969131242bbe173d684ef0c3832c53fb3250b045541
 ```
 
 </details>
