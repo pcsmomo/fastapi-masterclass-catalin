@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Post.css';
+import { Avatar, Button } from '@mui/material';
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -21,6 +22,16 @@ function Post({ post }) {
 
   return (
     <div className="post">
+      <div className="post_header">
+        <Avatar alt="Catalin" src="" />
+        <div className="post_headerInfo">
+          <h3>{post.user.username}</h3>
+          <Button className="post_delete" onClick={null}>
+            Delete
+          </Button>
+        </div>
+      </div>
+
       <img className="post_image" src={imageUrl} alt="post" />
 
       <h4 className="post_text">{post.caption}</h4>
