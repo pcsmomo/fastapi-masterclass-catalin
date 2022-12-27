@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Post from './Post';
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -25,7 +26,13 @@ function App() {
       });
   }, []);
 
-  return 'Hello World';
+  return (
+    <div className="app_posts">
+      {posts.map((post, idx) => (
+        <Post key={`${post.caption}-${idx}`} post={post} />
+      ))}
+    </div>
+  );
 }
 
 export default App;
