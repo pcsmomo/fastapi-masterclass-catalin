@@ -37,11 +37,12 @@ def upload_image(image: UploadFile = File(...), current_user: UserAuth = Depends
     new = f'_{rand_str}.'
     filename = new.join(image.filename.rsplit('.', 1))
     path = f'app/images/{filename}'
+    imagePath = f'images/{filename}'
 
     with open(path, "w+b") as buffer:
         shutil.copyfileobj(image.file, buffer)
 
-    return {'filename': path}
+    return {'filename': imagePath}
 
 
 @router.get('/delete/{id}')

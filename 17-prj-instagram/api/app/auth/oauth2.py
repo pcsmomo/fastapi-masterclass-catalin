@@ -4,8 +4,8 @@ from datetime import datetime, timedelta
 from jose import jwt, JWTError
 from fastapi import HTTPException, Depends, status
 from sqlalchemy.orm import Session
-from db.database import get_db
-from db import db_user
+from app.db.database import get_db
+from app.db import db_user
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
