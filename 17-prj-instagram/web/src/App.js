@@ -41,11 +41,27 @@ function App() {
   const [authTokenType, setAuthTokenType] = useState(null);
   const [userId, setUserId] = useState('');
 
+  // localStorage
+  useEffect(() => {
+    setAuthToken(window.localStorage.getItem('authToken'));
+    setAuthTokenType(window.localStorage.getItem('authTokenType'));
+    setUsername(window.localStorage.getItem('username'));
+    setUserId(window.localStorage.getItem('userId'));
+  }, []);
+
+  useEffect(() => {
+    if (authToken) window.localStorage.setItem('authToken', authToken);
+    if (authTokenType)
+      window.localStorage.setItem('authTokenType', authTokenType);
+    if (username) window.localStorage.setItem('username', username);
+    if (userId) window.localStorage.setItem('userId', userId);
+  }, [authToken, authTokenType, username, userId]);
+
+  // fetch data
   useEffect(() => {
     fetch(BASE_URL + 'post/all')
       .then((response) => {
         const json = response.json();
-        console.log(json);
         if (response.ok) {
           return json;
         }
@@ -102,17 +118,31 @@ function App() {
       })
       .catch((error) => {
         console.log(error);
+        clearAuth();
         alert(error);
       });
 
     setOpenSignIn(false);
   };
 
-  const signOut = (event) => {
+  const removeAuthLocalStorage = () => {
+    window.localStorage.removeItem('authToken');
+    window.localStorage.removeItem('authTokenType');
+    window.localStorage.removeItem('username');
+    window.localStorage.removeItem('userId');
+  };
+
+  const clearAuth = () => {
     setAuthToken(null);
     setAuthTokenType(null);
     setUserId('');
     setUsername('');
+
+    removeAuthLocalStorage();
+  };
+
+  const signOut = (event) => {
+    clearAuth();
   };
 
   return (
