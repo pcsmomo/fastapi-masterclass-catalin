@@ -380,4 +380,10 @@ openssl rand -hex 32
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
+### 121. Signup dialog
+
+```sh
+npm install tss-react
+```
+
 </details>
