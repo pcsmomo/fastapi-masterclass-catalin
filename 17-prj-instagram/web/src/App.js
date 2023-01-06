@@ -3,6 +3,7 @@ import './App.css';
 import Post from './Post';
 import { Button, Modal, Input } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
+import ImageUpload from './ImageUpload';
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -267,6 +268,8 @@ function App() {
           <Post key={`${post.caption}-${idx}`} post={post} />
         ))}
       </div>
+
+      {authToken ? <ImageUpload /> : <h3>You need to login to upload</h3>}
     </div>
   );
 }
