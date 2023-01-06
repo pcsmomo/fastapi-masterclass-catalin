@@ -126,6 +126,40 @@ function App() {
     setOpenSignIn(false);
   };
 
+  const signUp = (event) => {
+    event?.preventDefault();
+
+    const json_string = JSON.stringify({
+      username: username,
+      email: email,
+      password: password,
+    });
+
+    const requestOption = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: json_string,
+    };
+
+    fetch(BASE_URL + 'user/', requestOption)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        // console.log(data);
+        signIn();
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(error);
+      });
+
+    setOpenSignUp(false);
+  };
+
   const removeAuthLocalStorage = () => {
     window.localStorage.removeItem('authToken');
     window.localStorage.removeItem('authTokenType');
@@ -205,7 +239,7 @@ function App() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button type="submit" onClick={null}>
+            <Button type="submit" onClick={signUp}>
               Sign up
             </Button>
           </form>
