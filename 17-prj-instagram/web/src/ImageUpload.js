@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import './ImageUpload.css';
 
-function ImageUpload() {
+const BASE_URL = 'http://localhost:8000/';
+
+function ImageUpload({ authToken, authTokenType, userId }) {
   const [caption, setCaption] = useState('');
   const [image, setImage] = useState(null);
 
@@ -14,6 +16,36 @@ function ImageUpload() {
 
   const handleUpload = (e) => {
     e?.preventDefault();
+
+    const formData = new FormData();
+    formData.append('image', image);
+
+    const requestOptions = {
+      method: 'POST',
+      headers: new Headers({
+        Authorization: authTokenType + ' ' + authToken,
+      }),
+      body: formData,
+    };
+
+    fetch(BASE_URL + 'post/image', requestOptions)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        // create post
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setCaption('');
+        setImage(null);
+        document.getElementById('fileInput').value = null;
+      });
   };
 
   return (
