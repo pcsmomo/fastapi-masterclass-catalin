@@ -36,7 +36,7 @@ function ImageUpload({ authToken, authTokenType, userId }) {
         throw response;
       })
       .then((data) => {
-        // create post
+        createPost(data.filename);
       })
       .catch((error) => {
         console.log(error);
@@ -45,6 +45,39 @@ function ImageUpload({ authToken, authTokenType, userId }) {
         setCaption('');
         setImage(null);
         document.getElementById('fileInput').value = null;
+      });
+  };
+
+  const createPost = (imageUrl) => {
+    const json_string = JSON.stringify({
+      image_url: imageUrl,
+      image_url_type: 'relative',
+      caption: caption,
+      creator_id: userId,
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: new Headers({
+        Authorization: authTokenType + ' ' + authToken,
+        'Content-Type': 'application/json',
+      }),
+      body: json_string,
+    };
+
+    fetch(BASE_URL + 'post', requestOptions)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        window.location.reload();
+        window.scrollTo(0, 0);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 

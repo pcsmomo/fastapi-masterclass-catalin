@@ -35,13 +35,14 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-  const [modalStyle, setModalStyle] = useState(getModalStyle);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [authToken, setAuthToken] = useState(null);
   const [authTokenType, setAuthTokenType] = useState(null);
   const [userId, setUserId] = useState('');
   const [email, setEmail] = useState('');
+
+  const modalStyle = getModalStyle();
 
   // localStorage
   useEffect(() => {
