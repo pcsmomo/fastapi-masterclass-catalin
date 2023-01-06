@@ -266,7 +266,12 @@ function App() {
       </div>
       <div className="app_posts">
         {posts.map((post, idx) => (
-          <Post key={`${post.caption}-${idx}`} post={post} />
+          <Post
+            key={`${post.caption}-${idx}`}
+            post={post}
+            authToken={authToken}
+            authTokenType={authTokenType}
+          />
         ))}
       </div>
 
