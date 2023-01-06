@@ -40,6 +40,7 @@ function App() {
   const [authToken, setAuthToken] = useState(null);
   const [authTokenType, setAuthTokenType] = useState(null);
   const [userId, setUserId] = useState('');
+  const [email, setEmail] = useState('');
 
   // localStorage
   useEffect(() => {
@@ -171,6 +172,41 @@ function App() {
             />
             <Button type="submit" onClick={signIn}>
               Login
+            </Button>
+          </form>
+        </div>
+      </Modal>
+
+      <Modal open={openSignUp} onClose={() => setOpenSignUp(false)}>
+        <div style={modalStyle} className={classes.paper}>
+          <form className="app_signin">
+            <center>
+              <img
+                className="app_headerImage"
+                src="https://i2.wp.com/mrvsdaily.com/wp-content/uploads/2018/02/new-instagram-text-logo.png"
+                alt="Instagram"
+              />
+            </center>
+            <Input
+              placeholder="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <Input
+              placeholder="email"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Input
+              placeholder="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Button type="submit" onClick={null}>
+              Sign up
             </Button>
           </form>
         </div>
