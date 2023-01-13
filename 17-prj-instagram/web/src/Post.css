@@ -40,3 +40,23 @@
   justify-content: space-between;
   margin-left: 10px;
 }
+
+.post_commentbox {
+  display: flex;
+  margin-top: 10px;
+}
+
+.post_input {
+  flex: 1;
+  border: none;
+  border-top: 1px solid lightgray;
+  padding: 10px;
+}
+
+.post_button {
+  flex: 0;
+  border: none;
+  border-top: 1px solid lightgray;
+  background-color: transparent;
+  color: lightblue;
+}
