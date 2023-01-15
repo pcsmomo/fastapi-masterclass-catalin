@@ -9,6 +9,9 @@ Complete FastAPI masterclass from scratch 2022 by Catalin Stefan
 - 14-ocr: Optical character recognition
 - 15-prg-blog
 - 17-prg-instagram
+- 20-prj-warehouse
+  - microservices
+  - redis
 
 ## Details
 
@@ -384,6 +387,16 @@ npm install @mui/material @emotion/react @emotion/styled
 
 ```sh
 npm install tss-react
+```
+
+## Section 20: Warehouse app with Microservices and Redis
+
+### 168. Initialize project and Redis database
+
+```sh
+poetry init
+poetry add fastapi uvicorn autopep8
+poetry add redis-om
 ```
 
 </details>

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "api-warehouse"
+version = "0.1.0"
+description = ""
+authors = ["Noah Kim"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.89.1"
+uvicorn = "^0.20.0"
+redis-om = "^0.1.2"
+autopep8 = "^2.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

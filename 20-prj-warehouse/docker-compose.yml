@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+    redis:
+        image: redis:latest
+        networks:
+            - warehouse-network
+        ports:
+            - 6379:6379
+        command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+        volumes:
+            - warehouse-redis-vol:/data
+    api-warehouse:
+        build: './api-warehouse'
+        networks:
+            - warehouse-network
+        ports:
+            - 8000:8000
+        environment:
+            REDIS_HOST: redis
+            REDIS_PORT: 6379
+            REDIS_PASSWORD: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+        volumes:
+            - ./api-warehouse/app:/usr/src/app
+        depends_on:
+            - redis
+
+volumes:
+    warehouse-redis-vol:
+
+networks:
+    warehouse-network:
+        name: warehouse-network
