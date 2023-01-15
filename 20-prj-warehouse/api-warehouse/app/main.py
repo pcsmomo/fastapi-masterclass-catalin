@@ -1,17 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from redis_om import get_redis_connection, HashModel
-from pydantic import BaseSettings
-
-
-class Settings(BaseSettings):
-    REDIS_HOST: str = "redis"
-    REDIS_PORT: str = "6379"
-    REDIS_PASSWORD: str = ""
-
-
-settings = Settings()
-
+from redis_om import HashModel
+from app.redis.services import redis
 
 app = FastAPI()
 
@@ -20,12 +10,6 @@ app.add_middleware(
     allow_origins=["http://localhost:3000"],
     allow_methods=["*"],
     allow_headers=["*"],
-)
-
-redis = get_redis_connection(
-    host=settings.REDIS_HOST,
-    port=settings.REDIS_PORT,
-    password=settings.REDIS_PASSWORD
 )
 
 
