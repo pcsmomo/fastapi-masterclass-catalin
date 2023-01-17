@@ -399,4 +399,12 @@ poetry add fastapi uvicorn autopep8
 poetry add redis-om
 ```
 
+### 170. Store microservice
+
+```sh
+# Copy `pyproject.toml` file from api-warehouse
+poetry install
+poetry add requests
+```
+
 </details>
