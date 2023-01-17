@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.background import BackgroundTasks
 from redis_om import HashModel
 import requests
+import time
 from app.redis.services import redis
 from app.config import get_settings
 
@@ -38,7 +40,7 @@ class Order(HashModel):
 
 
 @app.post("/orders")
-def create(productOrder: ProductOrder):
+def create(productOrder: ProductOrder, background_tasks: BackgroundTasks):
     req = requests.get(
         f'http://{config.WAREHOUSE_HOST}:{config.WAREHOUSE_PORT}/product/{productOrder.product_id}')
     product = req.json()
@@ -53,7 +55,12 @@ def create(productOrder: ProductOrder):
         status='pending'
     )
 
-    return order.save()
+    order.save()
+
+    # order_complete(order)
+    background_tasks.add_task(order_complete, order)
+
+    return order
 
 
 @app.get('/orders/{pk}')
@@ -79,3 +86,9 @@ def format(pk: str):
         'quantity': order.quantity,
         'status': order.status
     }
+
+
+def order_complete(order: Order):
+    time.sleep(5)
+    order.status = 'completed'
+    order.save()
