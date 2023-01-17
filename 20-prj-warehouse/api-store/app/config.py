@@ -2,12 +2,17 @@ from pydantic import BaseSettings
 
 
 class RedisSettings(BaseSettings):
-    REDIS_HOST: str = "redis"
+    REDIS_HOST: str = "localhost"
     REDIS_PORT: str = "6379"
     REDIS_PASSWORD: str = ""
 
 
-class Settings(RedisSettings):
+class WarehouseSettings(BaseSettings):
+    WAREHOUSE_HOST: str = "localhost"
+    WAREHOUSE_PORT: str = "8000"
+
+
+class Settings(RedisSettings, WarehouseSettings):
     pass
 
 

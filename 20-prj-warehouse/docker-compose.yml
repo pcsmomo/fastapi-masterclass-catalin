@@ -34,6 +34,8 @@ services:
             REDIS_HOST: redis
             REDIS_PORT: 6379
             REDIS_PASSWORD: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+            WAREHOUSE_HOST: api-warehouse
+            WAREHOUSE_PORT: 8000
         volumes:
             - ./api-store/app:/usr/src/app
         depends_on:
