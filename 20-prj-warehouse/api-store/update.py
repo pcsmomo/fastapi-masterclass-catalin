@@ -1,6 +1,6 @@
 import time
 from redis_om import get_redis_connection
-from main import Product
+from main import Order
 
 redis = get_redis_connection(
     host="localhost",
@@ -8,17 +8,12 @@ redis = get_redis_connection(
     password="eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81",
 )
 
-key = 'order-completed'
-group = 'warehouse-group'
+key = 'refund-order'
+group = 'payment'
 
 try:
     redis.xgroup_create(name=key, groupname=group, mkstream=True)
     print("Group created")
-except Exception as e:
-    print(str(e))
-
-try:
-    redis.execute_command('auth eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81')
 except Exception as e:
     print(str(e))
 
@@ -30,12 +25,11 @@ while True:
         if results != []:
             for result in results:
                 obj = result[1][0][1]
-                try:
-                    product = Product.get(obj['product_id'])
-                    product.quantity -= int(obj['quantity'])
-                    product.save()
-                except:
-                    redis.xadd(name='refund-order', fields=obj)
+
+                order = Order.get(obj['pk'])
+                order.status = 'refunded'
+                order.save()
+                print(order)
     except Exception as e:
         print(str(e))
     time.sleep(3)
