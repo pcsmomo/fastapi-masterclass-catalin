@@ -1,11 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.background import BackgroundTasks
-from redis_om import HashModel
+from redis_om import get_redis_connection, HashModel
 import requests
 import time
-from app.redis.services import redis
-from app.config import get_settings
+from config import get_settings
 
 app = FastAPI()
 
@@ -17,6 +16,12 @@ app.add_middleware(
 )
 
 config = get_settings()
+
+redis = get_redis_connection(
+    host=config.REDIS_HOST,
+    port=config.REDIS_PORT,
+    password=config.REDIS_PASSWORD,
+)
 
 
 class ProductOrder(HashModel):
@@ -89,7 +94,7 @@ def format(pk: str):
 
 
 def order_complete(order: Order):
-    time.sleep(5)
+    time.sleep(3)
     order.status = 'completed'
     order.save()
     redis.xadd(name='order-completed', fields=order.dict())

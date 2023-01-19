@@ -17,6 +17,11 @@ try:
 except Exception as e:
     print(str(e))
 
+try:
+    redis.execute_command('auth eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81')
+except Exception as e:
+    print(str(e))
+
 while True:
     try:
         results = redis.xreadgroup(

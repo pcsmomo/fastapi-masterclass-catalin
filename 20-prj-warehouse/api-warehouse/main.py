@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from redis_om import HashModel
-from app.config import get_settings
+from config import get_settings
 from redis_om import get_redis_connection
 
 config = get_settings()
@@ -9,7 +9,7 @@ config = get_settings()
 redis = get_redis_connection(
     host=config.REDIS_HOST,
     port=config.REDIS_PORT,
-    password=config.REDIS_PASSWORD
+    password=config.REDIS_PASSWORD,
 )
 
 app = FastAPI()
