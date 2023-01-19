@@ -407,4 +407,15 @@ poetry install
 poetry add requests
 ```
 
+### 172. Update product
+
+```sh
+poetry shell
+python fullfillment.py
+# BUSYGROUP Consumer Group name already exists
+# []
+# []
+# []
+```
+
 </details>

@@ -92,3 +92,4 @@ def order_complete(order: Order):
     time.sleep(5)
     order.status = 'completed'
     order.save()
+    redis.xadd(name='order-completed', fields=order.dict())
