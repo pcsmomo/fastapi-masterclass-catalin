@@ -1,9 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Products.css";
 
+const BASE_URL = "http://localhost:8000/";
+
 export const Products = () => {
   const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(BASE_URL + "products")
+      .then((response) => {
+        const json = response.json();
+        if (response.ok) {
+          return json;
+        }
+        throw response;
+      })
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div className="products_div body">
