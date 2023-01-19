@@ -418,4 +418,11 @@ python fullfillment.py
 # []
 ```
 
+### 174. Create web project
+
+```sh
+npx create-react-app web
+npm install react-router-dom
+```
+
 </details>
